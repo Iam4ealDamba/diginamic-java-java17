@@ -1,5 +1,7 @@
 package java17.data;
 
+import java.util.function.Supplier;
+
 public class Person {
 
     private String firstname;
@@ -37,8 +39,9 @@ public class Person {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public Supplier<Person> setAge(Integer age) {
         this.age = age;
+        return () -> this;
     }
 
     public String getPassword() {
